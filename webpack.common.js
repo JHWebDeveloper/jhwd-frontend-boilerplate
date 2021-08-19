@@ -2,6 +2,7 @@ const path = require('path')
 const HTMLWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const postcssPresetEnv = require('postcss-preset-env')
+const postcssPseudoIs = require('postcss-pseudo-is')
 
 module.exports = {
 	target: 'web',
@@ -29,6 +30,7 @@ module.exports = {
 						options: {
 							postcssOptions: {
 								plugins: [
+									postcssPseudoIs(),
 									postcssPresetEnv({ stage: 0 })
 								]
 							}
