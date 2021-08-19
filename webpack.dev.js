@@ -7,10 +7,13 @@ module.exports = merge(common, {
 	mode: 'development',
 	devServer: {
 		port: 3000,
-		publicPath: '/',
-		contentBase: path.resolve('src'),
-		watchContentBase: true,
-		hot: true,
+		devMiddleware: {
+			publicPath: '/'
+		},
+		static: {
+			directory: path.resolve('src'),
+			watch: true
+		},
 		open: true
 	}
 })
